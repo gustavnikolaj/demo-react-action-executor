@@ -1,7 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getCount } from "./store/selectors";
-import { incrementCount, decrementCount } from "./store/eventCreators";
+import { withActionExecutor } from "./react-action-executor";
+import IncrementCountAction from "./actions/IncrementCountAction";
+import DecrementCountAction from "./actions/DecrementCountAction";
 
 const Count = props => (
   <div>
@@ -13,9 +15,12 @@ const Count = props => (
   </div>
 );
 
-export default connect(
-  state => ({
+export default withActionExecutor(
+  connect(state => ({
     count: getCount(state)
-  }),
-  { incrementCount, decrementCount }
-)(Count);
+  }))(Count),
+  {
+    incrementCount: IncrementCountAction,
+    decrementCount: DecrementCountAction
+  }
+);

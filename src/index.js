@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import configureStore from "./store";
 import ActionExecutor from "action-executor/lib/ActionExecutor";
 import IncrementCountAction from "./actions/IncrementCountAction";
+import { ActionExecutorProvider } from "./react-action-executor";
 
 const services = {};
 
@@ -23,8 +24,10 @@ setTimeout(() => {
 }, 2000);
 
 ReactDOM.render(
-  <Provider store={services.store}>
-    <App />
-  </Provider>,
+  <ActionExecutorProvider value={services.actionExecutor}>
+    <Provider store={services.store}>
+      <App />
+    </Provider>
+  </ActionExecutorProvider>,
   document.getElementById("root")
 );
