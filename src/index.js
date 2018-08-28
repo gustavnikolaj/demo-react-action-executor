@@ -19,6 +19,15 @@ services.actionExecutor = new ActionExecutor({
   }
 });
 
+services.actionExecutor.onStatusChange = function(task, status, err) {
+  var errorMessage = err && err.message && ", error: " + err.message;
+  console.log(
+    "%cActionExecutor:",
+    "color: firebrick; font-weight: bold;",
+    task.action.name + " " + status + (errorMessage || "")
+  );
+};
+
 setTimeout(() => {
   services.actionExecutor.enqueue(new IncrementCountAction());
 }, 2000);
