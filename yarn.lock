@@ -127,6 +127,10 @@ acorn@^5.0.0, acorn@^5.5.0:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.7.2.tgz#91fa871883485d06708800318404e72bfb26dcc5"
 
+action-executor@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/action-executor/-/action-executor-1.0.2.tgz#8691c08e6bd8127cbb08b56e48f45a2205053c61"
+
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/address/-/address-1.0.3.tgz#b5f50631f8d6cec8bd20c963963afb55e06cbce9"
